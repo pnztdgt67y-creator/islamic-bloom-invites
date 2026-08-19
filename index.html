@@ -10,24 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Allura&family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Italiana&family=Montserrat:wght@300;400&family=Parisienne&display=swap"
     rel="stylesheet"
   >
 
   <style>
     :root {
       --paper: #fdfcf9;
-      --paper-deep: #f8f5ef;
-      --paper-light: #ffffff;
+      --paper-soft: #faf8f3;
+      --paper-deep: #f5f1e9;
+      --white: #ffffff;
 
-      --accent: #d6c9b7;
-      --accent-light: #e7ddd0;
-      --accent-dark: #b9a890;
+      --accent: #d8ccbb;
+      --accent-dark: #b7a58d;
 
       --ink: #625d57;
       --soft-ink: #958f88;
-
-      --white: #ffffff;
     }
 
     * {
@@ -42,29 +40,27 @@
 
     body {
       min-height: 100vh;
+      overflow-x: hidden;
 
       font-family: "Cormorant Garamond", serif;
-
       color: var(--ink);
-
-      overflow-x: hidden;
 
       background:
         radial-gradient(
-          circle at 22% 12%,
-          rgba(255,255,255,.96),
+          circle at 20% 15%,
+          rgba(255,255,255,.98),
           transparent 34%
         ),
         radial-gradient(
-          circle at 80% 70%,
-          rgba(225,215,201,.14),
-          transparent 32%
+          circle at 80% 75%,
+          rgba(225,215,201,.13),
+          transparent 30%
         ),
         linear-gradient(
           180deg,
           #ffffff 0%,
-          #fdfbf7 52%,
-          #faf7f1 100%
+          #fdfbf8 55%,
+          #faf7f2 100%
         );
     }
 
@@ -72,28 +68,26 @@
 
     body::before {
       content: "";
-
       position: fixed;
       inset: 0;
 
       pointer-events: none;
-
-      opacity: .24;
-
       z-index: -2;
+
+      opacity: .22;
 
       background-image:
         repeating-linear-gradient(
           0deg,
-          rgba(98,93,87,.02) 0px,
-          rgba(98,93,87,.02) 1px,
+          rgba(95,85,75,.018) 0px,
+          rgba(95,85,75,.018) 1px,
           transparent 1px,
           transparent 4px
         ),
         repeating-linear-gradient(
           90deg,
-          rgba(98,93,87,.012) 0px,
-          rgba(98,93,87,.012) 1px,
+          rgba(95,85,75,.012) 0px,
+          rgba(95,85,75,.012) 1px,
           transparent 1px,
           transparent 7px
         );
@@ -101,30 +95,28 @@
 
     .paper-fibres {
       position: fixed;
-
       inset: 0;
 
       pointer-events: none;
-
       z-index: -1;
 
-      opacity: .14;
+      opacity: .13;
 
       background-image:
         radial-gradient(
           circle,
-          rgba(120,110,95,.11) .5px,
+          rgba(125,115,100,.10) .5px,
           transparent .8px
         ),
         radial-gradient(
           circle,
-          rgba(255,255,255,.95) .5px,
+          rgba(255,255,255,.98) .5px,
           transparent .8px
         );
 
       background-position:
         0 0,
-        7px 9px;
+        7px 10px;
 
       background-size:
         14px 14px,
@@ -135,16 +127,12 @@
 
     .section {
       width: 100%;
-
-      padding:
-        90px 22px;
-
+      padding: 90px 22px;
       text-align: center;
     }
 
     .content {
-      width: min(690px, 100%);
-
+      width: min(700px, 100%);
       margin: auto;
     }
 
@@ -152,22 +140,19 @@
       margin-bottom: 24px;
 
       font-family: "Montserrat", sans-serif;
-
       font-size: 9px;
 
-      letter-spacing: .25em;
-
+      letter-spacing: .24em;
       text-transform: uppercase;
 
       color: var(--soft-ink);
     }
 
     .divider {
-      width: 75px;
+      width: 74px;
       height: 1px;
 
-      margin:
-        28px auto;
+      margin: 28px auto;
 
       background:
         linear-gradient(
@@ -183,34 +168,26 @@
     #opening-screen {
       min-height: 100vh;
 
-      padding:
-        34px 18px;
-
       display: flex;
-
       align-items: center;
       justify-content: center;
 
       text-align: center;
 
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
+      padding: 35px 20px;
     }
 
     .opening-content {
-      width: min(520px, 100%);
+      width: min(530px, 100%);
     }
 
     .brand {
-      margin-bottom: 45px;
+      margin-bottom: 48px;
 
       font-family: "Montserrat", sans-serif;
-
       font-size: 9px;
 
       letter-spacing: .34em;
-
       text-transform: uppercase;
 
       color: var(--soft-ink);
@@ -220,7 +197,6 @@
 
     .envelope-wrap {
       width: min(390px, 88vw);
-
       margin: auto;
     }
 
@@ -228,44 +204,42 @@
       position: relative;
 
       width: 100%;
-
       aspect-ratio: 1.56 / 1;
 
       overflow: hidden;
 
-      border-radius: 2px;
-
       border:
-        1px solid rgba(185,168,144,.28);
+        1px solid rgba(185,168,144,.25);
+
+      border-radius: 2px;
 
       background:
         linear-gradient(
           145deg,
           #ffffff,
-          #faf7f1
+          #faf8f3
         );
 
       box-shadow:
-        0 22px 60px rgba(80,65,48,.06),
-        inset 0 0 40px rgba(255,255,255,.9);
+        0 24px 65px rgba(80,65,48,.06),
+        inset 0 0 42px rgba(255,255,255,.92);
     }
 
     .envelope::before {
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       pointer-events: none;
 
-      opacity: .23;
+      opacity: .19;
 
       background-image:
         repeating-linear-gradient(
           12deg,
-          rgba(120,110,95,.035) 0px,
-          rgba(120,110,95,.035) 1px,
+          rgba(120,110,95,.03) 0px,
+          rgba(120,110,95,.03) 1px,
           transparent 1px,
           transparent 5px
         );
@@ -287,7 +261,7 @@
         125px solid transparent;
 
       border-left:
-        195px solid #f7f3ec;
+        195px solid #f6f2eb;
 
       z-index: 2;
     }
@@ -308,7 +282,7 @@
         125px solid transparent;
 
       border-right:
-        195px solid #fbf8f3;
+        195px solid #fbf9f5;
 
       z-index: 2;
     }
@@ -329,7 +303,7 @@
         195px solid transparent;
 
       border-bottom:
-        138px solid #f4efe8;
+        138px solid #f3efe7;
 
       z-index: 3;
     }
@@ -350,7 +324,7 @@
         195px solid transparent;
 
       border-top:
-        145px solid #fffdf9;
+        145px solid #fffdfa;
 
       transform-origin: top;
 
@@ -366,8 +340,7 @@
       left: 50%;
       top: 112px;
 
-      transform:
-        translateX(-50%);
+      transform: translateX(-50%);
 
       width: 58px;
       height: 58px;
@@ -375,28 +348,26 @@
       border-radius: 50%;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
-      font-family: "Allura", cursive;
-
-      font-size: 23px;
+      font-family: "Parisienne", cursive;
+      font-size: 20px;
 
       color: #ffffff;
 
       background:
         linear-gradient(
           145deg,
-          #d6c8b5,
-          #bca98e
+          #d8ccbb,
+          #baa890
         );
 
       box-shadow:
-        0 5px 14px rgba(90,75,55,.12);
+        0 5px 14px rgba(90,75,55,.10);
 
       border:
-        1px solid rgba(255,255,255,.7);
+        1px solid rgba(255,255,255,.72);
 
       z-index: 7;
 
@@ -406,8 +377,7 @@
     }
 
     .envelope.open .envelope-flap {
-      transform:
-        rotateX(180deg);
+      transform: rotateX(180deg);
     }
 
     .envelope.open .wax-seal {
@@ -421,39 +391,39 @@
     /* OPENING NAMES */
 
     .opening-names {
-      margin-top: 34px;
+      margin-top: 36px;
 
-      font-family: "Allura", cursive;
+      font-family: "Parisienne", cursive;
 
       font-size:
-        clamp(56px, 14vw, 84px);
+        clamp(58px, 15vw, 88px);
 
       font-weight: 400;
-
       line-height: .9;
 
       color: var(--ink);
     }
 
     .opening-names .ampersand {
-      margin:
-        0 7px;
+      display: inline-block;
+
+      margin: 0 8px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: .47em;
+      font-style: italic;
 
       color: var(--accent-dark);
-
-      font-size: .72em;
     }
 
     .opening-date {
-      margin-top: 15px;
+      margin-top: 17px;
 
-      font-family:
-        "Cormorant Garamond",
-        serif;
-
+      font-family: "Cormorant Garamond", serif;
       font-size: 17px;
 
-      letter-spacing: .1em;
+      letter-spacing: .10em;
 
       color: var(--soft-ink);
     }
@@ -462,24 +432,21 @@
       margin-top: 24px;
 
       font-family: "Montserrat", sans-serif;
-
       font-size: 9px;
 
       letter-spacing: .22em;
-
       text-transform: uppercase;
 
       color: var(--soft-ink);
     }
 
     .open-button {
-      margin-top: 18px;
+      margin-top: 17px;
 
       border: none;
-
       background: transparent;
 
-      font-family: "Allura", cursive;
+      font-family: "Parisienne", cursive;
 
       font-size: 31px;
 
@@ -493,9 +460,7 @@
     }
 
     .open-button:hover {
-      transform:
-        translateY(-2px);
-
+      transform: translateY(-2px);
       opacity: .8;
     }
 
@@ -507,7 +472,7 @@
       opacity: 0;
 
       animation:
-        invitationFade 1.2s ease forwards;
+        invitationFade 1.15s ease forwards;
     }
 
     #invitation.show {
@@ -526,43 +491,44 @@
       min-height: 100vh;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
     }
 
     .bismillah {
-      margin-bottom: 7px;
+      margin-bottom: 8px;
 
       font-family: "Amiri", serif;
 
+      direction: rtl;
+
       font-size:
         clamp(31px, 6vw, 45px);
-
-      direction: rtl;
 
       color: var(--ink);
     }
 
     .bismillah-translit {
-      margin-bottom: 40px;
+      margin-bottom: 42px;
 
-      font-family: "Allura", cursive;
+      font-family: "Cormorant Garamond", serif;
 
-      font-size: 31px;
+      font-size: 21px;
+      font-style: italic;
+
+      letter-spacing: .03em;
 
       color: var(--soft-ink);
     }
 
     .hero-names {
-      font-family: "Allura", cursive;
+      font-family: "Parisienne", cursive;
 
       font-size:
-        clamp(75px, 17vw, 112px);
+        clamp(80px, 18vw, 120px);
 
       font-weight: 400;
-
-      line-height: .8;
+      line-height: .78;
 
       color: var(--ink);
     }
@@ -570,10 +536,12 @@
     .hero-names span {
       display: block;
 
-      margin:
-        16px 0;
+      margin: 18px 0;
 
-      font-size: .46em;
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: .33em;
+      font-style: italic;
 
       color: var(--accent-dark);
     }
@@ -581,8 +549,7 @@
     .intro {
       width: min(520px, 100%);
 
-      margin:
-        35px auto 0;
+      margin: 38px auto 0;
 
       font-size: 21px;
 
@@ -595,13 +562,13 @@
 
     .quran-section {
       background:
-        rgba(255,255,255,.4);
+        rgba(255,255,255,.46);
 
       border-top:
-        1px solid rgba(185,168,144,.15);
+        1px solid rgba(185,168,144,.14);
 
       border-bottom:
-        1px solid rgba(185,168,144,.15);
+        1px solid rgba(185,168,144,.14);
     }
 
     .quran-arabic {
@@ -620,11 +587,12 @@
     .quran-english {
       margin-top: 24px;
 
+      font-family: "Cormorant Garamond", serif;
+
       font-size: 20px;
+      font-style: italic;
 
       line-height: 1.75;
-
-      font-style: italic;
 
       color: var(--soft-ink);
     }
@@ -637,7 +605,6 @@
       font-size: 9px;
 
       letter-spacing: .18em;
-
       text-transform: uppercase;
 
       color: var(--soft-ink);
@@ -646,20 +613,19 @@
     /* SAVE THE DATE */
 
     .wedding-date {
-      font-family: "Allura", cursive;
+      font-family: "Parisienne", cursive;
 
       font-size:
-        clamp(58px, 12vw, 85px);
+        clamp(60px, 13vw, 90px);
 
       font-weight: 400;
-
       line-height: .95;
 
       color: var(--ink);
     }
 
     .wedding-time {
-      margin-top: 16px;
+      margin-top: 18px;
 
       font-size: 20px;
 
@@ -669,19 +635,19 @@
     .venue-name {
       margin-top: 25px;
 
-      font-family:
-        "Cormorant Garamond",
-        serif;
+      font-family: "Italiana", serif;
 
       font-size: 34px;
 
       font-weight: 400;
 
+      letter-spacing: .04em;
+
       color: var(--ink);
     }
 
     .venue-address {
-      margin-top: 12px;
+      margin-top: 14px;
 
       font-size: 18px;
 
@@ -693,7 +659,7 @@
     .location-link {
       display: inline-block;
 
-      margin-top: 25px;
+      margin-top: 26px;
 
       padding-bottom: 4px;
 
@@ -720,22 +686,22 @@
       margin: auto;
 
       padding:
-        52px 30px;
+        54px 30px;
 
       border:
-        1px solid rgba(185,168,144,.20);
+        1px solid rgba(185,168,144,.18);
 
       background:
-        rgba(255,255,255,.68);
+        rgba(255,255,255,.74);
 
       box-shadow:
-        0 20px 55px rgba(80,65,48,.045);
+        0 20px 55px rgba(80,65,48,.04);
     }
 
     .rsvp-title {
-      font-family: "Allura", cursive;
+      font-family: "Parisienne", cursive;
 
-      font-size: 68px;
+      font-size: 74px;
 
       font-weight: 400;
 
@@ -746,7 +712,7 @@
       max-width: 430px;
 
       margin:
-        3px auto 35px;
+        4px auto 36px;
 
       font-size: 17px;
 
@@ -788,15 +754,13 @@
       border: none;
 
       border-bottom:
-        1px solid rgba(185,168,144,.48);
+        1px solid rgba(185,168,144,.45);
 
       background: transparent;
 
       outline: none;
 
-      font-family:
-        "Cormorant Garamond",
-        serif;
+      font-family: "Cormorant Garamond", serif;
 
       font-size: 18px;
 
@@ -811,8 +775,7 @@
     }
 
     textarea {
-      min-height: 85px;
-
+      min-height: 88px;
       resize: vertical;
     }
 
@@ -822,7 +785,7 @@
       margin-top: 22px;
 
       padding:
-        15px 20px;
+        16px 20px;
 
       border: none;
 
@@ -837,14 +800,17 @@
 
       color: #ffffff;
 
-      font-family: "Allura", cursive;
+      font-family: "Cormorant Garamond", serif;
 
-      font-size: 32px;
+      font-size: 18px;
+      font-style: italic;
+
+      letter-spacing: .08em;
 
       cursor: pointer;
 
       box-shadow:
-        0 10px 25px rgba(100,85,65,.10);
+        0 10px 25px rgba(100,85,65,.09);
 
       transition:
         transform .25s ease,
@@ -852,17 +818,16 @@
     }
 
     .submit-button:hover {
-      transform:
-        translateY(-2px);
+      transform: translateY(-2px);
 
       box-shadow:
-        0 14px 30px rgba(100,85,65,.14);
+        0 14px 30px rgba(100,85,65,.13);
     }
 
     .success-message {
       display: none;
 
-      margin-top: 25px;
+      margin-top: 26px;
 
       font-size: 22px;
 
@@ -890,17 +855,17 @@
     }
 
     .closing-script {
-      margin-top: 25px;
+      margin-top: 28px;
 
-      font-family: "Allura", cursive;
+      font-family: "Parisienne", cursive;
 
-      font-size: 48px;
+      font-size: 54px;
 
       color: var(--accent-dark);
     }
 
     .footer-brand {
-      margin-top: 50px;
+      margin-top: 52px;
 
       font-family: "Montserrat", sans-serif;
 
@@ -919,33 +884,25 @@
 
       .section {
         padding:
-          75px 18px;
+          76px 18px;
       }
 
       .envelope-left {
-        border-left-width:
-          175px;
+        border-left-width: 175px;
       }
 
       .envelope-right {
-        border-right-width:
-          175px;
+        border-right-width: 175px;
       }
 
       .envelope-bottom {
-        border-left-width:
-          175px;
-
-        border-right-width:
-          175px;
+        border-left-width: 175px;
+        border-right-width: 175px;
       }
 
       .envelope-flap {
-        border-left-width:
-          175px;
-
-        border-right-width:
-          175px;
+        border-left-width: 175px;
+        border-right-width: 175px;
       }
 
       .wax-seal {
@@ -954,9 +911,8 @@
 
       .rsvp-card {
         padding:
-          44px 20px;
+          45px 20px;
       }
-
     }
   </style>
 </head>
@@ -964,7 +920,6 @@
 <body>
 
   <div class="paper-fibres"></div>
-
 
   <!-- OPENING SCREEN -->
 
@@ -975,7 +930,6 @@
       <div class="brand">
         Islamic Bloom
       </div>
-
 
       <div class="envelope-wrap">
 
@@ -992,7 +946,6 @@
 
           <div class="envelope-flap"></div>
 
-
           <div class="wax-seal">
             A&Y
           </div>
@@ -1000,7 +953,6 @@
         </div>
 
       </div>
-
 
       <h1 class="opening-names">
 
@@ -1014,16 +966,13 @@
 
       </h1>
 
-
       <div class="opening-date">
         17 October 2026
       </div>
 
-
       <div class="tap-text">
         Tap below to open
       </div>
-
 
       <button
         id="openInvitation"
@@ -1038,8 +987,7 @@
   </section>
 
 
-
-  <!-- INVITATION -->
+  <!-- MAIN INVITATION -->
 
   <main id="invitation">
 
@@ -1050,13 +998,11 @@
 
       <div class="content">
 
-
         <div class="bismillah">
 
           بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
 
         </div>
-
 
         <div class="bismillah-translit">
 
@@ -1064,13 +1010,11 @@
 
         </div>
 
-
         <div class="small-heading">
 
           Together with their families
 
         </div>
-
 
         <h2 class="hero-names">
 
@@ -1083,7 +1027,6 @@
           Yusuf
 
         </h2>
-
 
         <p class="intro">
 
@@ -1099,13 +1042,11 @@
     </section>
 
 
-
     <!-- QURAN -->
 
     <section class="section quran-section">
 
       <div class="content">
-
 
         <div class="quran-arabic">
 
@@ -1114,9 +1055,7 @@
 
         </div>
 
-
         <div class="divider"></div>
-
 
         <p class="quran-english">
 
@@ -1124,7 +1063,6 @@
           two mates; perhaps you will remember.”
 
         </p>
-
 
         <div class="quran-reference">
 
@@ -1137,20 +1075,17 @@
     </section>
 
 
-
     <!-- SAVE THE DATE -->
 
     <section class="section">
 
       <div class="content">
 
-
         <div class="small-heading">
 
           Save the Date
 
         </div>
-
 
         <h2 class="wedding-date">
 
@@ -1160,16 +1095,13 @@
 
         </h2>
 
-
         <div class="wedding-time">
 
           5:30 PM
 
         </div>
 
-
         <div class="divider"></div>
-
 
         <h3 class="venue-name">
 
@@ -1177,12 +1109,10 @@
 
         </h3>
 
-
         <p class="venue-address">
 
           125 Gardenia Avenue
           <br>
-
           Sydney, NSW 2000
 
           <br><br>
@@ -1191,21 +1121,17 @@
 
         </p>
 
-
         <a
           class="location-link"
           href="https://maps.google.com"
           target="_blank"
         >
-
           View Location
-
         </a>
 
       </div>
 
     </section>
-
 
 
     <!-- RSVP -->
@@ -1214,20 +1140,17 @@
 
       <div class="rsvp-card">
 
-
         <div class="small-heading">
 
           Kindly Respond
 
         </div>
 
-
         <h2 class="rsvp-title">
 
           RSVP
 
         </h2>
-
 
         <p class="rsvp-subtitle">
 
@@ -1241,13 +1164,11 @@
 
         </p>
 
-
         <form
           id="rsvpForm"
           action="https://formspree.io/f/YOUR_FORM_ID"
           method="POST"
         >
-
 
           <div class="form-group">
 
@@ -1256,7 +1177,6 @@
               Full Name
 
             </label>
-
 
             <input
               id="guestName"
@@ -1269,7 +1189,6 @@
           </div>
 
 
-
           <div class="form-group">
 
             <label for="attendance">
@@ -1278,7 +1197,6 @@
 
             </label>
 
-
             <select
               id="attendance"
               name="Attendance"
@@ -1286,29 +1204,20 @@
             >
 
               <option value="">
-
                 Select your response
-
               </option>
-
 
               <option value="Joyfully accepts">
-
                 Joyfully accepts
-
               </option>
 
-
               <option value="Regretfully declines">
-
                 Regretfully declines
-
               </option>
 
             </select>
 
           </div>
-
 
 
           <div class="form-group">
@@ -1319,40 +1228,21 @@
 
             </label>
 
-
             <select
               id="guestCount"
               name="Number of Guests"
             >
 
-              <option value="1">
-                1
-              </option>
-
-              <option value="2">
-                2
-              </option>
-
-              <option value="3">
-                3
-              </option>
-
-              <option value="4">
-                4
-              </option>
-
-              <option value="5">
-                5
-              </option>
-
-              <option value="6">
-                6
-              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
 
             </select>
 
           </div>
-
 
 
           <div class="form-group">
@@ -1363,7 +1253,6 @@
 
             </label>
 
-
             <textarea
               id="guestNames"
               name="Additional Guest Names"
@@ -1371,7 +1260,6 @@
             ></textarea>
 
           </div>
-
 
 
           <div class="form-group">
@@ -1382,7 +1270,6 @@
 
             </label>
 
-
             <textarea
               id="message"
               name="Message or Dua"
@@ -1390,7 +1277,6 @@
             ></textarea>
 
           </div>
-
 
 
           <button
@@ -1404,8 +1290,6 @@
 
         </form>
 
-
-
         <div
           class="success-message"
           id="successMessage"
@@ -1413,7 +1297,6 @@
 
           Thank you.
           <br>
-
           Your RSVP has been received.
 
         </div>
@@ -1423,13 +1306,11 @@
     </section>
 
 
-
     <!-- CLOSING -->
 
     <section class="section closing-section">
 
       <div class="content">
-
 
         <div class="dua-arabic">
 
@@ -1439,9 +1320,7 @@
 
         </div>
 
-
         <div class="divider"></div>
-
 
         <p class="intro">
 
@@ -1451,13 +1330,11 @@
 
         </p>
 
-
         <div class="closing-script">
 
           With love
 
         </div>
-
 
         <div class="footer-brand">
 
@@ -1472,10 +1349,7 @@
   </main>
 
 
-
   <script>
-
-    /* OPEN INVITATION */
 
     const openButton =
       document.getElementById(
@@ -1533,7 +1407,6 @@
     );
 
 
-
     /* RSVP FORM */
 
     const rsvpForm =
@@ -1553,15 +1426,9 @@
 
         event.preventDefault();
 
-
         const endpoint =
           rsvpForm.action;
 
-
-        /*
-          Until you connect Formspree,
-          the form works as a demo.
-        */
 
         if (
           endpoint.includes(
@@ -1590,18 +1457,14 @@
             await fetch(
               endpoint,
               {
-
                 method: "POST",
 
                 body: formData,
 
                 headers: {
-
                   Accept:
                     "application/json"
-
                 }
-
               }
             );
 
