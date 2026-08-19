@@ -16,13 +16,16 @@
 
   <style>
     :root {
-      --paper: #fdfcf9;
-      --paper-soft: #faf8f3;
-      --paper-deep: #f5f1e9;
+      --paper: #fbfaf6;
+      --paper-soft: #f7f4ed;
+      --paper-deep: #f3efe7;
+
       --accent: #d8ccbb;
       --accent-dark: #b8a68e;
+
       --ink: #625d57;
       --soft-ink: #958f88;
+
       --white: #ffffff;
     }
 
@@ -45,100 +48,198 @@
 
       background:
         radial-gradient(
-          circle at 18% 12%,
-          rgba(255,255,255,.98),
-          transparent 34%
+          circle at 20% 10%,
+          rgba(255,255,255,.95),
+          transparent 32%
         ),
         radial-gradient(
-          circle at 82% 78%,
-          rgba(224,214,198,.13),
-          transparent 32%
+          circle at 75% 80%,
+          rgba(222,214,202,.16),
+          transparent 35%
         ),
         linear-gradient(
           180deg,
-          #ffffff 0%,
-          #fdfbf8 55%,
-          #faf7f2 100%
+          #fbfaf6 0%,
+          #f7f4ed 48%,
+          #faf8f3 100%
         );
     }
+
+    /* REALISTIC PAPER GRAIN */
 
     body::before {
       content: "";
+
       position: fixed;
       inset: 0;
+
       pointer-events: none;
       z-index: -2;
-      opacity: .22;
+
+      opacity: .32;
 
       background-image:
         repeating-linear-gradient(
-          0deg,
-          rgba(95,85,75,.018) 0px,
-          rgba(95,85,75,.018) 1px,
+          3deg,
+          rgba(90,82,72,.024) 0px,
+          rgba(90,82,72,.024) 1px,
           transparent 1px,
-          transparent 4px
+          transparent 5px
         ),
+
         repeating-linear-gradient(
-          90deg,
-          rgba(95,85,75,.012) 0px,
-          rgba(95,85,75,.012) 1px,
+          93deg,
+          rgba(110,100,88,.017) 0px,
+          rgba(110,100,88,.017) 1px,
           transparent 1px,
-          transparent 7px
+          transparent 8px
         );
     }
+
+    /* PAPER FIBRES */
 
     .paper-fibres {
       position: fixed;
       inset: 0;
+
       pointer-events: none;
       z-index: -1;
-      opacity: .12;
+
+      opacity: .22;
 
       background-image:
         radial-gradient(
-          circle,
-          rgba(125,115,100,.10) .5px,
-          transparent .8px
+          ellipse at center,
+          rgba(120,108,92,.09) 0,
+          rgba(120,108,92,.035) 1px,
+          transparent 1.6px
         ),
+
         radial-gradient(
-          circle,
-          rgba(255,255,255,.98) .5px,
-          transparent .8px
+          ellipse at center,
+          rgba(255,255,255,.8) 0,
+          rgba(255,255,255,.35) 1px,
+          transparent 1.6px
         );
 
-      background-position:
-        0 0,
-        7px 10px;
-
       background-size:
-        14px 14px,
-        18px 18px;
+        18px 13px,
+        24px 19px;
+
+      background-position:
+        2px 4px,
+        12px 9px;
     }
+
+    /* FLOATING PETALS */
+
+    .petal-layer {
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+      overflow: hidden;
+
+      z-index: 50;
+    }
+
+    .petal {
+      position: absolute;
+      top: -40px;
+
+      width: 12px;
+      height: 18px;
+
+      border-radius:
+        70% 30% 70% 30%;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.98),
+          rgba(231,224,214,.80)
+        );
+
+      box-shadow:
+        0 2px 5px rgba(100,85,70,.04);
+
+      opacity: .65;
+
+      animation:
+        petalFall linear forwards;
+    }
+
+    @keyframes petalFall {
+      0% {
+        transform:
+          translate3d(0,-20px,0)
+          rotate(0deg);
+
+        opacity: 0;
+      }
+
+      10% {
+        opacity: .65;
+      }
+
+      35% {
+        transform:
+          translate3d(24px,35vh,0)
+          rotate(120deg);
+      }
+
+      65% {
+        transform:
+          translate3d(-18px,70vh,0)
+          rotate(240deg);
+      }
+
+      100% {
+        transform:
+          translate3d(28px,110vh,0)
+          rotate(360deg);
+
+        opacity: 0;
+      }
+    }
+
+    /* GENERAL */
 
     .section {
       width: 100%;
-      padding: 90px 22px;
+
+      padding:
+        90px 22px;
+
       text-align: center;
     }
 
     .content {
       width: min(700px, 100%);
+
       margin: auto;
     }
 
     .small-heading {
       margin-bottom: 24px;
+
       font-family: "Montserrat", sans-serif;
+
       font-size: 9px;
+
       letter-spacing: .24em;
+
       text-transform: uppercase;
+
       color: var(--soft-ink);
     }
 
     .divider {
       width: 74px;
       height: 1px;
-      margin: 28px auto;
+
+      margin:
+        28px auto;
 
       background:
         linear-gradient(
@@ -153,11 +254,15 @@
 
     #opening-screen {
       min-height: 100vh;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
-      padding: 36px 20px;
+
+      padding:
+        36px 20px;
     }
 
     .opening-content {
@@ -166,32 +271,45 @@
 
     .brand {
       margin-bottom: 48px;
+
       font-family: "Montserrat", sans-serif;
+
       font-size: 9px;
+
       letter-spacing: .34em;
+
       text-transform: uppercase;
+
       color: var(--soft-ink);
     }
 
+    /* ENVELOPE */
+
     .envelope-wrap {
       width: min(390px, 88vw);
+
       margin: auto;
     }
 
     .envelope {
       position: relative;
+
       width: 100%;
+
       aspect-ratio: 1.56 / 1;
+
       overflow: hidden;
 
-      border: 1px solid rgba(185,168,144,.24);
+      border:
+        1px solid rgba(185,168,144,.24);
+
       border-radius: 2px;
 
       background:
         linear-gradient(
           145deg,
-          #ffffff,
-          #faf8f3
+          #fffefa,
+          #f8f5ee
         );
 
       box-shadow:
@@ -201,9 +319,12 @@
 
     .envelope::before {
       content: "";
+
       position: absolute;
       inset: 0;
-      opacity: .18;
+
+      opacity: .20;
+
       pointer-events: none;
 
       background-image:
@@ -218,64 +339,101 @@
 
     .envelope-left {
       position: absolute;
+
       left: 0;
       bottom: 0;
+
       width: 0;
       height: 0;
 
-      border-top: 125px solid transparent;
-      border-bottom: 125px solid transparent;
-      border-left: 195px solid #f6f2eb;
+      border-top:
+        125px solid transparent;
+
+      border-bottom:
+        125px solid transparent;
+
+      border-left:
+        195px solid #f5f1e9;
+
       z-index: 2;
     }
 
     .envelope-right {
       position: absolute;
+
       right: 0;
       bottom: 0;
+
       width: 0;
       height: 0;
 
-      border-top: 125px solid transparent;
-      border-bottom: 125px solid transparent;
-      border-right: 195px solid #fbf9f5;
+      border-top:
+        125px solid transparent;
+
+      border-bottom:
+        125px solid transparent;
+
+      border-right:
+        195px solid #faf7f2;
+
       z-index: 2;
     }
 
     .envelope-bottom {
       position: absolute;
+
       left: 0;
       bottom: 0;
+
       width: 0;
       height: 0;
 
-      border-left: 195px solid transparent;
-      border-right: 195px solid transparent;
-      border-bottom: 138px solid #f3efe7;
+      border-left:
+        195px solid transparent;
+
+      border-right:
+        195px solid transparent;
+
+      border-bottom:
+        138px solid #f0ece4;
+
       z-index: 3;
     }
 
     .envelope-flap {
       position: absolute;
+
       top: 0;
       left: 0;
+
       width: 0;
       height: 0;
 
-      border-left: 195px solid transparent;
-      border-right: 195px solid transparent;
-      border-top: 145px solid #fffdfa;
+      border-left:
+        195px solid transparent;
+
+      border-right:
+        195px solid transparent;
+
+      border-top:
+        145px solid #fffdf8;
 
       transform-origin: top;
-      transition: transform 1s cubic-bezier(.2,.8,.2,1);
+
+      transition:
+        transform 1s cubic-bezier(.2,.8,.2,1);
+
       z-index: 5;
     }
 
     .wax-seal {
       position: absolute;
+
       left: 50%;
       top: 112px;
-      transform: translateX(-50%);
+
+      transform:
+        translateX(-50%);
 
       width: 58px;
       height: 58px;
@@ -286,8 +444,12 @@
       align-items: center;
       justify-content: center;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
       font-size: 18px;
+
       font-style: italic;
 
       color: #ffffff;
@@ -313,7 +475,8 @@
     }
 
     .envelope.open .envelope-flap {
-      transform: rotateX(180deg);
+      transform:
+        rotateX(180deg);
     }
 
     .envelope.open .wax-seal {
@@ -324,15 +487,20 @@
         scale(.75);
     }
 
+    /* FRONT NAMES */
+
     .opening-names {
       margin-top: 38px;
 
-      font-family: "Pinyon Script", cursive;
+      font-family:
+        "Pinyon Script",
+        cursive;
 
       font-size:
-        clamp(62px, 16vw, 92px);
+        clamp(62px,16vw,92px);
 
       font-weight: 400;
+
       line-height: .95;
 
       color: #514c47;
@@ -340,11 +508,16 @@
 
     .opening-names .ampersand {
       display: inline-block;
-      margin: 0 11px;
 
-      font-family: "Cormorant Garamond", serif;
+      margin:
+        0 11px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
       font-size: .45em;
+
       font-style: italic;
 
       color: var(--accent-dark);
@@ -353,9 +526,12 @@
     .opening-date {
       margin-top: 20px;
 
-      font-family: "Italiana", serif;
+      font-family:
+        "Italiana",
+        serif;
 
       font-size: 14px;
+
       letter-spacing: .11em;
 
       color: var(--soft-ink);
@@ -364,10 +540,14 @@
     .tap-text {
       margin-top: 25px;
 
-      font-family: "Montserrat", sans-serif;
+      font-family:
+        "Montserrat",
+        sans-serif;
 
       font-size: 9px;
+
       letter-spacing: .22em;
+
       text-transform: uppercase;
 
       color: var(--soft-ink);
@@ -377,11 +557,15 @@
       margin-top: 18px;
 
       border: none;
+
       background: transparent;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
       font-size: 20px;
+
       font-style: italic;
 
       color: var(--accent-dark);
@@ -393,6 +577,7 @@
 
     #invitation {
       display: none;
+
       opacity: 0;
 
       animation:
@@ -422,12 +607,14 @@
     .bismillah {
       margin-bottom: 8px;
 
-      font-family: "Amiri", serif;
+      font-family:
+        "Amiri",
+        serif;
 
       direction: rtl;
 
       font-size:
-        clamp(31px, 6vw, 45px);
+        clamp(31px,6vw,45px);
 
       color: var(--ink);
     }
@@ -436,6 +623,7 @@
       margin-bottom: 42px;
 
       font-size: 20px;
+
       font-style: italic;
 
       color: var(--soft-ink);
@@ -444,23 +632,23 @@
     .invite-intro {
       margin-bottom: 30px;
 
-      font-family: "Cormorant Garamond", serif;
-
       font-size: 21px;
-      font-style: italic;
 
-      letter-spacing: .02em;
+      font-style: italic;
 
       color: var(--soft-ink);
     }
 
     .hero-names {
-      font-family: "Pinyon Script", cursive;
+      font-family:
+        "Pinyon Script",
+        cursive;
 
       font-size:
-        clamp(82px, 20vw, 128px);
+        clamp(82px,20vw,128px);
 
       font-weight: 400;
+
       line-height: .73;
 
       color: #514c47;
@@ -469,11 +657,15 @@
     .hero-names span {
       display: block;
 
-      margin: 20px 0;
+      margin:
+        20px 0;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
       font-size: .28em;
+
       font-style: italic;
 
       color: var(--accent-dark);
@@ -482,7 +674,9 @@
     .together-text {
       margin-top: 34px;
 
-      font-family: "Montserrat", sans-serif;
+      font-family:
+        "Montserrat",
+        sans-serif;
 
       font-size: 9px;
 
@@ -494,9 +688,10 @@
     }
 
     .intro {
-      width: min(540px, 100%);
+      width: min(540px,100%);
 
-      margin: 34px auto 0;
+      margin:
+        34px auto 0;
 
       font-size: 21px;
 
@@ -519,12 +714,15 @@
     }
 
     .quran-arabic {
-      font-family: "Amiri", serif;
+      font-family:
+        "Amiri",
+        serif;
 
       font-size:
-        clamp(27px, 5vw, 36px);
+        clamp(27px,5vw,36px);
 
       line-height: 2;
+
       direction: rtl;
 
       color: var(--ink);
@@ -534,6 +732,7 @@
       margin-top: 24px;
 
       font-size: 20px;
+
       font-style: italic;
 
       line-height: 1.75;
@@ -544,11 +743,14 @@
     .quran-reference {
       margin-top: 16px;
 
-      font-family: "Montserrat", sans-serif;
+      font-family:
+        "Montserrat",
+        sans-serif;
 
       font-size: 9px;
 
       letter-spacing: .18em;
+
       text-transform: uppercase;
 
       color: var(--soft-ink);
@@ -557,12 +759,15 @@
     /* SAVE THE DATE */
 
     .wedding-date {
-      font-family: "Italiana", serif;
+      font-family:
+        "Italiana",
+        serif;
 
       font-size:
-        clamp(44px, 10vw, 68px);
+        clamp(44px,10vw,68px);
 
       font-weight: 400;
+
       line-height: 1.1;
 
       color: var(--ink);
@@ -579,12 +784,13 @@
     .venue-name {
       margin-top: 25px;
 
-      font-family: "Italiana", serif;
+      font-family:
+        "Italiana",
+        serif;
 
       font-size: 34px;
-      font-weight: 400;
 
-      letter-spacing: .03em;
+      font-weight: 400;
 
       color: var(--ink);
     }
@@ -620,11 +826,12 @@
 
     .rsvp-section {
       padding-top: 110px;
+
       padding-bottom: 115px;
     }
 
     .rsvp-card {
-      width: min(600px, 100%);
+      width: min(600px,100%);
 
       margin: auto;
 
@@ -635,17 +842,17 @@
         1px solid rgba(185,168,144,.18);
 
       background:
-        rgba(255,255,255,.74);
+        rgba(255,255,255,.72);
 
       box-shadow:
         0 20px 55px rgba(80,65,48,.04);
     }
 
     .rsvp-title {
-      font-family: "Cormorant Garamond", serif;
-
       font-size: 58px;
+
       font-weight: 400;
+
       font-style: italic;
 
       color: var(--ink);
@@ -666,18 +873,23 @@
 
     .form-group {
       margin-bottom: 20px;
+
       text-align: left;
     }
 
     label {
       display: block;
+
       margin-bottom: 8px;
 
-      font-family: "Montserrat", sans-serif;
+      font-family:
+        "Montserrat",
+        sans-serif;
 
       font-size: 9px;
 
       letter-spacing: .16em;
+
       text-transform: uppercase;
 
       color: var(--soft-ink);
@@ -700,7 +912,9 @@
 
       outline: none;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
       font-size: 18px;
 
@@ -716,6 +930,7 @@
 
     textarea {
       min-height: 88px;
+
       resize: vertical;
     }
 
@@ -740,9 +955,12 @@
 
       color: #ffffff;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
       font-size: 18px;
+
       letter-spacing: .08em;
 
       cursor: pointer;
@@ -770,7 +988,9 @@
     }
 
     .dua-arabic {
-      font-family: "Amiri", serif;
+      font-family:
+        "Amiri",
+        serif;
 
       direction: rtl;
 
@@ -782,9 +1002,10 @@
     }
 
     .closing-text {
-      width: min(520px, 100%);
+      width: min(520px,100%);
 
-      margin: 30px auto 0;
+      margin:
+        30px auto 0;
 
       font-size: 21px;
 
@@ -794,9 +1015,10 @@
     }
 
     .no-gifts {
-      width: min(500px, 100%);
+      width: min(500px,100%);
 
-      margin: 55px auto 0;
+      margin:
+        55px auto 0;
 
       padding:
         28px 20px;
@@ -807,12 +1029,9 @@
       border-bottom:
         1px solid rgba(184,166,142,.30);
 
-      font-family: "Cormorant Garamond", serif;
-
       font-size: 21px;
-      font-style: italic;
 
-      letter-spacing: .02em;
+      font-style: italic;
 
       color: var(--ink);
     }
@@ -820,17 +1039,23 @@
     .footer-brand {
       margin-top: 55px;
 
-      font-family: "Montserrat", sans-serif;
+      font-family:
+        "Montserrat",
+        sans-serif;
 
       font-size: 8px;
 
       letter-spacing: .22em;
+
       text-transform: uppercase;
 
       color: var(--soft-ink);
     }
 
+    /* MOBILE */
+
     @media (max-width: 520px) {
+
       .section {
         padding:
           76px 18px;
@@ -870,8 +1095,13 @@
 
   <div class="paper-fibres"></div>
 
+  <div
+    class="petal-layer"
+    id="petalLayer"
+  ></div>
 
-  <!-- OPENING -->
+
+  <!-- OPENING SCREEN -->
 
   <section id="opening-screen">
 
@@ -881,14 +1111,22 @@
         Islamic Bloom
       </div>
 
+
       <div class="envelope-wrap">
 
-        <div class="envelope" id="envelope">
+        <div
+          class="envelope"
+          id="envelope"
+        >
 
           <div class="envelope-left"></div>
+
           <div class="envelope-right"></div>
+
           <div class="envelope-bottom"></div>
+
           <div class="envelope-flap"></div>
+
 
           <div class="wax-seal">
             A & Y
@@ -1011,6 +1249,7 @@
 
       <div class="content">
 
+
         <div class="quran-arabic">
 
           وَمِنْ كُلِّ شَيْءٍ خَلَقْنَا
@@ -1018,7 +1257,9 @@
 
         </div>
 
+
         <div class="divider"></div>
+
 
         <p class="quran-english">
 
@@ -1026,6 +1267,7 @@
           two mates; perhaps you will remember.”
 
         </p>
+
 
         <div class="quran-reference">
 
@@ -1048,6 +1290,7 @@
           Save the Date
         </div>
 
+
         <h2 class="wedding-date">
 
           Saturday
@@ -1056,15 +1299,21 @@
 
         </h2>
 
+
         <div class="wedding-time">
           5:30 PM
         </div>
 
+
         <div class="divider"></div>
 
+
         <h3 class="venue-name">
+
           The Ivory Pavilion
+
         </h3>
+
 
         <p class="venue-address">
 
@@ -1078,12 +1327,15 @@
 
         </p>
 
+
         <a
           class="location-link"
           href="https://maps.google.com"
           target="_blank"
         >
+
           View Location
+
         </a>
 
       </div>
@@ -1097,13 +1349,20 @@
 
       <div class="rsvp-card">
 
+
         <div class="small-heading">
+
           Kindly Respond
+
         </div>
 
+
         <h2 class="rsvp-title">
+
           RSVP
+
         </h2>
+
 
         <p class="rsvp-subtitle">
 
@@ -1113,7 +1372,7 @@
           <br><br>
 
           Please respond by
-          20 September 2026.
+          10 October 2026.
 
         </p>
 
@@ -1124,11 +1383,15 @@
           method="POST"
         >
 
+
           <div class="form-group">
 
             <label for="guestName">
+
               Full Name
+
             </label>
+
 
             <input
               id="guestName"
@@ -1144,8 +1407,11 @@
           <div class="form-group">
 
             <label for="attendance">
+
               Will you be attending?
+
             </label>
+
 
             <select
               id="attendance"
@@ -1157,9 +1423,11 @@
                 Select your response
               </option>
 
+
               <option value="Joyfully accepts">
                 Joyfully accepts
               </option>
+
 
               <option value="Regretfully declines">
                 Regretfully declines
@@ -1173,8 +1441,11 @@
           <div class="form-group">
 
             <label for="guestCount">
+
               Number of Guests
+
             </label>
+
 
             <select
               id="guestCount"
@@ -1182,10 +1453,15 @@
             >
 
               <option value="1">1</option>
+
               <option value="2">2</option>
+
               <option value="3">3</option>
+
               <option value="4">4</option>
+
               <option value="5">5</option>
+
               <option value="6">6</option>
 
             </select>
@@ -1196,8 +1472,11 @@
           <div class="form-group">
 
             <label for="guestNames">
+
               Additional Guest Names
+
             </label>
+
 
             <textarea
               id="guestNames"
@@ -1211,8 +1490,11 @@
           <div class="form-group">
 
             <label for="message">
+
               Message or Du'a
+
             </label>
+
 
             <textarea
               id="message"
@@ -1227,7 +1509,9 @@
             type="submit"
             class="submit-button"
           >
+
             Send RSVP
+
           </button>
 
         </form>
@@ -1240,6 +1524,7 @@
 
           Thank you.
           <br>
+
           Your RSVP has been received.
 
         </div>
@@ -1255,6 +1540,7 @@
 
       <div class="content">
 
+
         <div class="dua-arabic">
 
           بَارَكَ اللَّهُ لَكُمَا
@@ -1263,7 +1549,9 @@
 
         </div>
 
+
         <div class="divider"></div>
+
 
         <p class="closing-text">
 
@@ -1273,11 +1561,13 @@
 
         </p>
 
+
         <div class="no-gifts">
 
           Kindly, no gifts or flowers.
 
         </div>
+
 
         <div class="footer-brand">
 
@@ -1295,35 +1585,149 @@
   <script>
 
     const openButton =
-      document.getElementById("openInvitation");
+      document.getElementById(
+        "openInvitation"
+      );
 
     const envelope =
-      document.getElementById("envelope");
+      document.getElementById(
+        "envelope"
+      );
 
     const openingScreen =
-      document.getElementById("opening-screen");
+      document.getElementById(
+        "opening-screen"
+      );
 
     const invitation =
-      document.getElementById("invitation");
+      document.getElementById(
+        "invitation"
+      );
 
+    const petalLayer =
+      document.getElementById(
+        "petalLayer"
+      );
+
+    let petalInterval = null;
+
+
+    /* FLOATING PETALS */
+
+    function createPetal() {
+
+      const petal =
+        document.createElement(
+          "div"
+        );
+
+      petal.classList.add(
+        "petal"
+      );
+
+
+      const size =
+        Math.random() * 8 + 8;
+
+
+      petal.style.width =
+        size + "px";
+
+
+      petal.style.height =
+        size * 1.45 + "px";
+
+
+      petal.style.left =
+        Math.random() * 100 + "vw";
+
+
+      petal.style.animationDuration =
+        Math.random() * 5 + 8 + "s";
+
+
+      petal.style.opacity =
+        Math.random() * .30 + .30;
+
+
+      petal.style.transform =
+        "rotate(" +
+        Math.random() * 360 +
+        "deg)";
+
+
+      petalLayer.appendChild(
+        petal
+      );
+
+
+      setTimeout(
+        function () {
+
+          petal.remove();
+
+        },
+        15000
+      );
+
+    }
+
+
+    function startPetals() {
+
+      if (petalInterval) {
+        return;
+      }
+
+
+      createPetal();
+      createPetal();
+      createPetal();
+
+
+      petalInterval =
+        setInterval(
+          createPetal,
+          650
+        );
+
+    }
+
+
+    /* OPEN INVITATION */
 
     openButton.addEventListener(
       "click",
       function () {
 
-        envelope.classList.add("open");
+        envelope.classList.add(
+          "open"
+        );
 
-        openButton.style.opacity = ".4";
+
+        openButton.style.opacity =
+          ".4";
 
 
         setTimeout(
           function () {
 
-            openingScreen.style.display = "none";
+            openingScreen.style.display =
+              "none";
 
-            invitation.classList.add("show");
 
-            window.scrollTo(0, 0);
+            invitation.classList.add(
+              "show"
+            );
+
+
+            window.scrollTo(
+              0,
+              0
+            );
+
+
+            startPetals();
 
           },
           900
@@ -1333,11 +1737,17 @@
     );
 
 
+    /* RSVP */
+
     const rsvpForm =
-      document.getElementById("rsvpForm");
+      document.getElementById(
+        "rsvpForm"
+      );
 
     const successMessage =
-      document.getElementById("successMessage");
+      document.getElementById(
+        "successMessage"
+      );
 
 
     rsvpForm.addEventListener(
@@ -1346,12 +1756,15 @@
 
         event.preventDefault();
 
+
         const endpoint =
           rsvpForm.action;
 
 
         if (
-          endpoint.includes("YOUR_FORM_ID")
+          endpoint.includes(
+            "YOUR_FORM_ID"
+          )
         ) {
 
           alert(
@@ -1359,11 +1772,14 @@
           );
 
           return;
+
         }
 
 
         const formData =
-          new FormData(rsvpForm);
+          new FormData(
+            rsvpForm
+          );
 
 
         try {
@@ -1372,26 +1788,36 @@
             await fetch(
               endpoint,
               {
+
                 method: "POST",
 
                 body: formData,
 
                 headers: {
-                  Accept: "application/json"
+
+                  Accept:
+                    "application/json"
+
                 }
+
               }
             );
 
 
-          if (response.ok) {
+          if (
+            response.ok
+          ) {
 
             rsvpForm.style.display =
               "none";
 
+
             successMessage.style.display =
               "block";
 
-          } else {
+          }
+
+          else {
 
             alert(
               "There was a problem submitting your RSVP. Please try again."
@@ -1399,7 +1825,9 @@
 
           }
 
-        } catch (error) {
+        }
+
+        catch (error) {
 
           alert(
             "Unable to send your RSVP right now. Please try again."
