@@ -19,13 +19,10 @@
       --paper: #fdfcf9;
       --paper-soft: #faf8f3;
       --paper-deep: #f5f1e9;
-
       --accent: #d8ccbb;
       --accent-dark: #b8a68e;
-
       --ink: #625d57;
       --soft-ink: #958f88;
-
       --white: #ffffff;
     }
 
@@ -69,10 +66,8 @@
       content: "";
       position: fixed;
       inset: 0;
-
       pointer-events: none;
       z-index: -2;
-
       opacity: .22;
 
       background-image:
@@ -95,10 +90,8 @@
     .paper-fibres {
       position: fixed;
       inset: 0;
-
       pointer-events: none;
       z-index: -1;
-
       opacity: .12;
 
       background-image:
@@ -122,8 +115,6 @@
         18px 18px;
     }
 
-    /* GENERAL */
-
     .section {
       width: 100%;
       padding: 90px 22px;
@@ -137,20 +128,16 @@
 
     .small-heading {
       margin-bottom: 24px;
-
       font-family: "Montserrat", sans-serif;
       font-size: 9px;
-
       letter-spacing: .24em;
       text-transform: uppercase;
-
       color: var(--soft-ink);
     }
 
     .divider {
       width: 74px;
       height: 1px;
-
       margin: 28px auto;
 
       background:
@@ -166,13 +153,10 @@
 
     #opening-screen {
       min-height: 100vh;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       text-align: center;
-
       padding: 36px 20px;
     }
 
@@ -182,17 +166,12 @@
 
     .brand {
       margin-bottom: 48px;
-
       font-family: "Montserrat", sans-serif;
       font-size: 9px;
-
       letter-spacing: .34em;
       text-transform: uppercase;
-
       color: var(--soft-ink);
     }
-
-    /* ENVELOPE */
 
     .envelope-wrap {
       width: min(390px, 88vw);
@@ -201,10 +180,8 @@
 
     .envelope {
       position: relative;
-
       width: 100%;
       aspect-ratio: 1.56 / 1;
-
       overflow: hidden;
 
       border: 1px solid rgba(185,168,144,.24);
@@ -224,10 +201,8 @@
 
     .envelope::before {
       content: "";
-
       position: absolute;
       inset: 0;
-
       opacity: .18;
       pointer-events: none;
 
@@ -245,14 +220,12 @@
       position: absolute;
       left: 0;
       bottom: 0;
-
       width: 0;
       height: 0;
 
       border-top: 125px solid transparent;
       border-bottom: 125px solid transparent;
       border-left: 195px solid #f6f2eb;
-
       z-index: 2;
     }
 
@@ -260,14 +233,12 @@
       position: absolute;
       right: 0;
       bottom: 0;
-
       width: 0;
       height: 0;
 
       border-top: 125px solid transparent;
       border-bottom: 125px solid transparent;
       border-right: 195px solid #fbf9f5;
-
       z-index: 2;
     }
 
@@ -275,14 +246,12 @@
       position: absolute;
       left: 0;
       bottom: 0;
-
       width: 0;
       height: 0;
 
       border-left: 195px solid transparent;
       border-right: 195px solid transparent;
       border-bottom: 138px solid #f3efe7;
-
       z-index: 3;
     }
 
@@ -290,7 +259,6 @@
       position: absolute;
       top: 0;
       left: 0;
-
       width: 0;
       height: 0;
 
@@ -299,19 +267,14 @@
       border-top: 145px solid #fffdfa;
 
       transform-origin: top;
-
-      transition:
-        transform 1s cubic-bezier(.2,.8,.2,1);
-
+      transition: transform 1s cubic-bezier(.2,.8,.2,1);
       z-index: 5;
     }
 
     .wax-seal {
       position: absolute;
-
       left: 50%;
       top: 112px;
-
       transform: translateX(-50%);
 
       width: 58px;
@@ -361,8 +324,6 @@
         scale(.75);
     }
 
-    /* BRIDE & GROOM — PINYON SCRIPT */
-
     .opening-names {
       margin-top: 38px;
 
@@ -372,7 +333,6 @@
         clamp(62px, 16vw, 92px);
 
       font-weight: 400;
-
       line-height: .95;
 
       color: #514c47;
@@ -380,7 +340,6 @@
 
     .opening-names .ampersand {
       display: inline-block;
-
       margin: 0 11px;
 
       font-family: "Cormorant Garamond", serif;
@@ -397,7 +356,6 @@
       font-family: "Italiana", serif;
 
       font-size: 14px;
-
       letter-spacing: .11em;
 
       color: var(--soft-ink);
@@ -409,9 +367,7 @@
       font-family: "Montserrat", sans-serif;
 
       font-size: 9px;
-
       letter-spacing: .22em;
-
       text-transform: uppercase;
 
       color: var(--soft-ink);
@@ -437,7 +393,6 @@
 
     #invitation {
       display: none;
-
       opacity: 0;
 
       animation:
@@ -481,13 +436,23 @@
       margin-bottom: 42px;
 
       font-size: 20px;
-
       font-style: italic;
 
       color: var(--soft-ink);
     }
 
-    /* PINYON SCRIPT INSIDE INVITATION */
+    .invite-intro {
+      margin-bottom: 30px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 21px;
+      font-style: italic;
+
+      letter-spacing: .02em;
+
+      color: var(--soft-ink);
+    }
 
     .hero-names {
       font-family: "Pinyon Script", cursive;
@@ -496,7 +461,6 @@
         clamp(82px, 20vw, 128px);
 
       font-weight: 400;
-
       line-height: .73;
 
       color: #514c47;
@@ -515,10 +479,24 @@
       color: var(--accent-dark);
     }
 
-    .intro {
-      width: min(520px, 100%);
+    .together-text {
+      margin-top: 34px;
 
-      margin: 42px auto 0;
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: .25em;
+
+      text-transform: uppercase;
+
+      color: var(--soft-ink);
+    }
+
+    .intro {
+      width: min(540px, 100%);
+
+      margin: 34px auto 0;
 
       font-size: 21px;
 
@@ -547,7 +525,6 @@
         clamp(27px, 5vw, 36px);
 
       line-height: 2;
-
       direction: rtl;
 
       color: var(--ink);
@@ -557,7 +534,6 @@
       margin-top: 24px;
 
       font-size: 20px;
-
       font-style: italic;
 
       line-height: 1.75;
@@ -573,13 +549,12 @@
       font-size: 9px;
 
       letter-spacing: .18em;
-
       text-transform: uppercase;
 
       color: var(--soft-ink);
     }
 
-    /* DATE */
+    /* SAVE THE DATE */
 
     .wedding-date {
       font-family: "Italiana", serif;
@@ -588,7 +563,6 @@
         clamp(44px, 10vw, 68px);
 
       font-weight: 400;
-
       line-height: 1.1;
 
       color: var(--ink);
@@ -608,7 +582,6 @@
       font-family: "Italiana", serif;
 
       font-size: 34px;
-
       font-weight: 400;
 
       letter-spacing: .03em;
@@ -672,7 +645,6 @@
       font-family: "Cormorant Garamond", serif;
 
       font-size: 58px;
-
       font-weight: 400;
       font-style: italic;
 
@@ -694,13 +666,11 @@
 
     .form-group {
       margin-bottom: 20px;
-
       text-align: left;
     }
 
     label {
       display: block;
-
       margin-bottom: 8px;
 
       font-family: "Montserrat", sans-serif;
@@ -708,7 +678,6 @@
       font-size: 9px;
 
       letter-spacing: .16em;
-
       text-transform: uppercase;
 
       color: var(--soft-ink);
@@ -747,7 +716,6 @@
 
     textarea {
       min-height: 88px;
-
       resize: vertical;
     }
 
@@ -775,7 +743,6 @@
       font-family: "Cormorant Garamond", serif;
 
       font-size: 18px;
-
       letter-spacing: .08em;
 
       cursor: pointer;
@@ -826,8 +793,6 @@
       color: var(--soft-ink);
     }
 
-    /* NO GIFTS MESSAGE */
-
     .no-gifts {
       width: min(500px, 100%);
 
@@ -845,7 +810,6 @@
       font-family: "Cormorant Garamond", serif;
 
       font-size: 21px;
-
       font-style: italic;
 
       letter-spacing: .02em;
@@ -861,16 +825,12 @@
       font-size: 8px;
 
       letter-spacing: .22em;
-
       text-transform: uppercase;
 
       color: var(--soft-ink);
     }
 
-    /* MOBILE */
-
     @media (max-width: 520px) {
-
       .section {
         padding:
           76px 18px;
@@ -903,7 +863,6 @@
           45px 20px;
       }
     }
-
   </style>
 </head>
 
@@ -921,7 +880,6 @@
       <div class="brand">
         Islamic Bloom
       </div>
-
 
       <div class="envelope-wrap">
 
@@ -977,7 +935,6 @@
   </section>
 
 
-
   <!-- MAIN INVITATION -->
 
   <main id="invitation">
@@ -1004,9 +961,9 @@
         </div>
 
 
-        <div class="small-heading">
+        <div class="invite-intro">
 
-          Together with their families
+          We kindly invite you to celebrate
 
         </div>
 
@@ -1024,12 +981,22 @@
         </h2>
 
 
+        <div class="together-text">
+
+          Together with their families
+
+        </div>
+
+
+        <div class="divider"></div>
+
+
         <p class="intro">
 
-          With gratitude to Allah
-          and hearts full of joy,
-          we warmly invite you to share
-          in the celebration of our marriage.
+          With grateful hearts and by the grace of Allah,
+          we invite you to share in a beautiful evening
+          of love, joy and celebration as we begin
+          this new chapter together.
 
         </p>
 
@@ -1038,13 +1005,11 @@
     </section>
 
 
-
     <!-- QURAN -->
 
     <section class="section quran-section">
 
       <div class="content">
-
 
         <div class="quran-arabic">
 
@@ -1053,9 +1018,7 @@
 
         </div>
 
-
         <div class="divider"></div>
-
 
         <p class="quran-english">
 
@@ -1063,7 +1026,6 @@
           two mates; perhaps you will remember.”
 
         </p>
-
 
         <div class="quran-reference">
 
@@ -1076,7 +1038,6 @@
     </section>
 
 
-
     <!-- SAVE THE DATE -->
 
     <section class="section">
@@ -1087,7 +1048,6 @@
           Save the Date
         </div>
 
-
         <h2 class="wedding-date">
 
           Saturday
@@ -1096,21 +1056,15 @@
 
         </h2>
 
-
         <div class="wedding-time">
           5:30 PM
         </div>
 
-
         <div class="divider"></div>
 
-
         <h3 class="venue-name">
-
           The Ivory Pavilion
-
         </h3>
-
 
         <p class="venue-address">
 
@@ -1124,21 +1078,17 @@
 
         </p>
 
-
         <a
           class="location-link"
           href="https://maps.google.com"
           target="_blank"
         >
-
           View Location
-
         </a>
 
       </div>
 
     </section>
-
 
 
     <!-- RSVP -->
@@ -1151,11 +1101,9 @@
           Kindly Respond
         </div>
 
-
         <h2 class="rsvp-title">
           RSVP
         </h2>
-
 
         <p class="rsvp-subtitle">
 
@@ -1175,7 +1123,6 @@
           action="https://formspree.io/f/YOUR_FORM_ID"
           method="POST"
         >
-
 
           <div class="form-group">
 
@@ -1280,9 +1227,7 @@
             type="submit"
             class="submit-button"
           >
-
             Send RSVP
-
           </button>
 
         </form>
@@ -1304,13 +1249,11 @@
     </section>
 
 
-
     <!-- CLOSING -->
 
     <section class="section closing-section">
 
       <div class="content">
-
 
         <div class="dua-arabic">
 
@@ -1320,9 +1263,7 @@
 
         </div>
 
-
         <div class="divider"></div>
-
 
         <p class="closing-text">
 
@@ -1332,13 +1273,11 @@
 
         </p>
 
-
         <div class="no-gifts">
 
           Kindly, no gifts or flowers.
 
         </div>
-
 
         <div class="footer-brand">
 
@@ -1353,10 +1292,7 @@
   </main>
 
 
-
   <script>
-
-    /* OPEN INVITATION */
 
     const openButton =
       document.getElementById("openInvitation");
@@ -1397,8 +1333,6 @@
     );
 
 
-    /* RSVP */
-
     const rsvpForm =
       document.getElementById("rsvpForm");
 
@@ -1411,7 +1345,6 @@
       async function (event) {
 
         event.preventDefault();
-
 
         const endpoint =
           rsvpForm.action;
