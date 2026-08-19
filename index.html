@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Amina & Yusuf | Wedding Invitation</title>
+  <title>Amina & Yusuf | Islamic Bloom Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap"
     rel="stylesheet"
   >
 
   <style>
     :root {
-      --ivory: #fbf8f2;
-      --cream: #f6efe5;
-      --beige: #e8dccb;
-      --beige-dark: #d8c6ae;
-      --gold: #b99a63;
-      --gold-light: #d9c29a;
-      --gold-dark: #967846;
-      --brown: #594b40;
-      --muted: #8a7b6e;
-      --white: #fffdf9;
+      --paper: #fdfcf9;
+      --paper-deep: #f8f5ef;
+      --paper-light: #ffffff;
+
+      --accent: #d6c9b7;
+      --accent-light: #e7ddd0;
+      --accent-dark: #b9a890;
+
+      --ink: #625d57;
+      --soft-ink: #958f88;
+
+      --white: #ffffff;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -39,87 +41,161 @@
     }
 
     body {
-      font-family: "Montserrat", sans-serif;
+      min-height: 100vh;
+
+      font-family: "Cormorant Garamond", serif;
+
+      color: var(--ink);
+
+      overflow-x: hidden;
+
       background:
         radial-gradient(
-          circle at 20% 10%,
-          rgba(217, 194, 154, 0.15),
-          transparent 32%
+          circle at 22% 12%,
+          rgba(255,255,255,.96),
+          transparent 34%
         ),
         radial-gradient(
-          circle at 80% 45%,
-          rgba(232, 220, 203, 0.3),
-          transparent 35%
+          circle at 80% 70%,
+          rgba(225,215,201,.14),
+          transparent 32%
         ),
         linear-gradient(
           180deg,
-          var(--ivory),
-          var(--cream)
+          #ffffff 0%,
+          #fdfbf7 52%,
+          #faf7f1 100%
         );
-
-      color: var(--brown);
-      min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* -------------------------
-       DECORATIVE BACKGROUND
-    ------------------------- */
+    /* PAPER TEXTURE */
 
-    .grain {
+    body::before {
+      content: "";
+
       position: fixed;
       inset: 0;
+
       pointer-events: none;
-      opacity: 0.18;
+
+      opacity: .24;
+
+      z-index: -2;
+
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(98,93,87,.02) 0px,
+          rgba(98,93,87,.02) 1px,
+          transparent 1px,
+          transparent 4px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(98,93,87,.012) 0px,
+          rgba(98,93,87,.012) 1px,
+          transparent 1px,
+          transparent 7px
+        );
+    }
+
+    .paper-fibres {
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
       z-index: -1;
+
+      opacity: .14;
 
       background-image:
         radial-gradient(
-          rgba(120, 100, 75, 0.08) 0.5px,
-          transparent 0.5px
+          circle,
+          rgba(120,110,95,.11) .5px,
+          transparent .8px
+        ),
+        radial-gradient(
+          circle,
+          rgba(255,255,255,.95) .5px,
+          transparent .8px
         );
 
-      background-size: 9px 9px;
+      background-position:
+        0 0,
+        7px 9px;
+
+      background-size:
+        14px 14px,
+        18px 18px;
     }
 
-    .gold-line {
-      width: 70px;
+    /* GENERAL */
+
+    .section {
+      width: 100%;
+
+      padding:
+        90px 22px;
+
+      text-align: center;
+    }
+
+    .content {
+      width: min(690px, 100%);
+
+      margin: auto;
+    }
+
+    .small-heading {
+      margin-bottom: 24px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: .25em;
+
+      text-transform: uppercase;
+
+      color: var(--soft-ink);
+    }
+
+    .divider {
+      width: 75px;
       height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold),
-        transparent
-      );
 
-      margin: 24px auto;
+      margin:
+        28px auto;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--accent-dark),
+          transparent
+        );
     }
 
-    /* -------------------------
-       OPENING SCREEN
-    ------------------------- */
+    /* OPENING SCREEN */
 
     #opening-screen {
       min-height: 100vh;
-      padding: 40px 20px;
+
+      padding:
+        34px 18px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
       text-align: center;
 
       transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-    }
-
-    #opening-screen.hide {
-      opacity: 0;
-      transform: translateY(-25px);
-      pointer-events: none;
-      position: absolute;
-      width: 100%;
+        opacity .8s ease,
+        transform .8s ease;
     }
 
     .opening-content {
@@ -127,179 +203,311 @@
     }
 
     .brand {
+      margin-bottom: 45px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: .34em;
+
       text-transform: uppercase;
-      letter-spacing: 0.28em;
-      font-size: 10px;
-      color: var(--gold-dark);
-      margin-bottom: 30px;
+
+      color: var(--soft-ink);
+    }
+
+    /* ENVELOPE */
+
+    .envelope-wrap {
+      width: min(390px, 88vw);
+
+      margin: auto;
     }
 
     .envelope {
       position: relative;
+
       width: 100%;
-      max-width: 470px;
-      height: 290px;
 
-      margin: auto;
-
-      background: linear-gradient(
-        145deg,
-        #efe5d8,
-        #e7d9c8
-      );
-
-      border: 1px solid rgba(150, 120, 70, 0.2);
-
-      border-radius: 12px;
-
-      box-shadow:
-        0 30px 70px rgba(90, 70, 45, 0.12);
+      aspect-ratio: 1.56 / 1;
 
       overflow: hidden;
+
+      border-radius: 2px;
+
+      border:
+        1px solid rgba(185,168,144,.28);
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #faf7f1
+        );
+
+      box-shadow:
+        0 22px 60px rgba(80,65,48,.06),
+        inset 0 0 40px rgba(255,255,255,.9);
     }
 
     .envelope::before {
       content: "";
+
       position: absolute;
+
       inset: 0;
 
-      background:
-        linear-gradient(
-          35deg,
-          transparent 49%,
-          rgba(255,255,255,0.25) 50%
+      pointer-events: none;
+
+      opacity: .23;
+
+      background-image:
+        repeating-linear-gradient(
+          12deg,
+          rgba(120,110,95,.035) 0px,
+          rgba(120,110,95,.035) 1px,
+          transparent 1px,
+          transparent 5px
         );
+    }
+
+    .envelope-left {
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 0;
+      height: 0;
+
+      border-top:
+        125px solid transparent;
+
+      border-bottom:
+        125px solid transparent;
+
+      border-left:
+        195px solid #f7f3ec;
+
+      z-index: 2;
+    }
+
+    .envelope-right {
+      position: absolute;
+
+      right: 0;
+      bottom: 0;
+
+      width: 0;
+      height: 0;
+
+      border-top:
+        125px solid transparent;
+
+      border-bottom:
+        125px solid transparent;
+
+      border-right:
+        195px solid #fbf8f3;
+
+      z-index: 2;
+    }
+
+    .envelope-bottom {
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 0;
+      height: 0;
+
+      border-left:
+        195px solid transparent;
+
+      border-right:
+        195px solid transparent;
+
+      border-bottom:
+        138px solid #f4efe8;
+
+      z-index: 3;
     }
 
     .envelope-flap {
       position: absolute;
-      width: 100%;
-      height: 165px;
 
       top: 0;
       left: 0;
 
-      background: #f2e8dc;
+      width: 0;
+      height: 0;
 
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        50% 100%
-      );
+      border-left:
+        195px solid transparent;
+
+      border-right:
+        195px solid transparent;
+
+      border-top:
+        145px solid #fffdf9;
 
       transform-origin: top;
 
       transition:
         transform 1s cubic-bezier(.2,.8,.2,1);
 
-      z-index: 4;
-    }
-
-    .envelope.open .envelope-flap {
-      transform: rotateX(180deg);
+      z-index: 5;
     }
 
     .wax-seal {
       position: absolute;
+
       left: 50%;
-      top: 126px;
+      top: 112px;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
-      width: 64px;
-      height: 64px;
+      width: 58px;
+      height: 58px;
 
       border-radius: 50%;
 
-      background:
-        radial-gradient(
-          circle at 35% 30%,
-          #ceb47d,
-          #ae8c50 60%,
-          #92703d
-        );
-
-      color: #fff8e9;
-
       display: flex;
+
       align-items: center;
       justify-content: center;
 
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
+      font-family: "Allura", cursive;
+
       font-size: 23px;
 
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          145deg,
+          #d6c8b5,
+          #bca98e
+        );
+
       box-shadow:
-        0 7px 17px rgba(91, 70, 40, 0.25);
+        0 5px 14px rgba(90,75,55,.12);
 
-      z-index: 6;
+      border:
+        1px solid rgba(255,255,255,.7);
 
-      transition: opacity 0.4s ease;
+      z-index: 7;
+
+      transition:
+        opacity .45s ease,
+        transform .45s ease;
+    }
+
+    .envelope.open .envelope-flap {
+      transform:
+        rotateX(180deg);
     }
 
     .envelope.open .wax-seal {
       opacity: 0;
+
+      transform:
+        translateX(-50%)
+        scale(.75);
     }
 
-    .opening-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(34px, 7vw, 52px);
+    /* OPENING NAMES */
+
+    .opening-names {
+      margin-top: 34px;
+
+      font-family: "Allura", cursive;
+
+      font-size:
+        clamp(56px, 14vw, 84px);
+
       font-weight: 400;
 
-      margin-top: 34px;
-      color: var(--brown);
+      line-height: .9;
+
+      color: var(--ink);
     }
 
-    .opening-subtitle {
-      color: var(--muted);
-      margin: 8px 0 27px;
-      font-size: 13px;
-      letter-spacing: 0.08em;
+    .opening-names .ampersand {
+      margin:
+        0 7px;
+
+      color: var(--accent-dark);
+
+      font-size: .72em;
+    }
+
+    .opening-date {
+      margin-top: 15px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 17px;
+
+      letter-spacing: .1em;
+
+      color: var(--soft-ink);
+    }
+
+    .tap-text {
+      margin-top: 24px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: .22em;
+
+      text-transform: uppercase;
+
+      color: var(--soft-ink);
     }
 
     .open-button {
-      border: 1px solid var(--gold);
+      margin-top: 18px;
 
-      background:
-        linear-gradient(
-          135deg,
-          #b89a65,
-          #a7854d
-        );
+      border: none;
 
-      color: #fffdf8;
+      background: transparent;
 
-      padding: 14px 32px;
-      border-radius: 100px;
+      font-family: "Allura", cursive;
 
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      font-size: 31px;
 
-      font-size: 10px;
-      font-family: "Montserrat", sans-serif;
+      color: var(--accent-dark);
 
       cursor: pointer;
 
       transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        transform .25s ease,
+        opacity .25s ease;
     }
 
     .open-button:hover {
-      transform: translateY(-2px);
-      box-shadow:
-        0 12px 25px rgba(150, 120, 70, 0.2);
+      transform:
+        translateY(-2px);
+
+      opacity: .8;
     }
 
-    /* -------------------------
-       MAIN INVITATION
-    ------------------------- */
+    /* MAIN INVITATION */
 
     #invitation {
       display: none;
+
       opacity: 0;
 
-      animation: invitationFade 1.3s ease forwards;
+      animation:
+        invitationFade 1.2s ease forwards;
     }
 
     #invitation.show {
@@ -312,340 +520,261 @@
       }
     }
 
-    section {
-      padding: 80px 22px;
-      text-align: center;
-    }
+    /* HERO */
 
-    .hero {
+    .hero-section {
       min-height: 100vh;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
-
-      position: relative;
     }
 
-    .hero-inner {
-      width: min(680px, 100%);
-    }
+    .bismillah {
+      margin-bottom: 7px;
 
-    .bismillah-arabic {
       font-family: "Amiri", serif;
-      font-size: clamp(30px, 6vw, 44px);
-      color: var(--gold-dark);
+
+      font-size:
+        clamp(31px, 6vw, 45px);
+
       direction: rtl;
 
-      margin-bottom: 10px;
+      color: var(--ink);
     }
 
-    .bismillah-english {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 17px;
-      font-style: italic;
-      color: var(--muted);
+    .bismillah-translit {
+      margin-bottom: 40px;
 
-      margin-bottom: 36px;
+      font-family: "Allura", cursive;
+
+      font-size: 31px;
+
+      color: var(--soft-ink);
     }
 
-    .intro-small {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
+    .hero-names {
+      font-family: "Allura", cursive;
 
-      color: var(--gold-dark);
-
-      margin-bottom: 26px;
-    }
-
-    .couple-names {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(60px, 15vw, 105px);
+      font-size:
+        clamp(75px, 17vw, 112px);
 
       font-weight: 400;
-      line-height: 0.8;
 
-      color: var(--brown);
+      line-height: .8;
+
+      color: var(--ink);
     }
 
-    .couple-names .and {
+    .hero-names span {
       display: block;
 
-      color: var(--gold);
+      margin:
+        16px 0;
 
-      font-size: 40%;
-      font-style: italic;
+      font-size: .46em;
 
-      margin: 16px 0;
+      color: var(--accent-dark);
     }
 
-    .invitation-text {
-      width: min(510px, 100%);
-      margin: 35px auto 0;
+    .intro {
+      width: min(520px, 100%);
 
-      color: var(--muted);
-      line-height: 2;
+      margin:
+        35px auto 0;
 
-      font-family: "Cormorant Garamond", serif;
-      font-size: 20px;
+      font-size: 21px;
+
+      line-height: 1.9;
+
+      color: var(--soft-ink);
     }
 
-    /* -------------------------
-       QURAN SECTION
-    ------------------------- */
+    /* QURAN */
 
     .quran-section {
       background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,0.4),
-          rgba(232,220,203,0.35)
-        );
+        rgba(255,255,255,.4);
 
-      border-top: 1px solid rgba(185, 154, 99, 0.12);
-      border-bottom: 1px solid rgba(185, 154, 99, 0.12);
-    }
+      border-top:
+        1px solid rgba(185,168,144,.15);
 
-    .quran-container {
-      width: min(680px, 100%);
-      margin: auto;
-    }
-
-    .quran-symbol {
-      color: var(--gold);
-      font-size: 27px;
-      margin-bottom: 25px;
+      border-bottom:
+        1px solid rgba(185,168,144,.15);
     }
 
     .quran-arabic {
       font-family: "Amiri", serif;
-      font-size: clamp(25px, 5vw, 34px);
+
+      font-size:
+        clamp(27px, 5vw, 36px);
+
       line-height: 2;
 
       direction: rtl;
 
-      color: var(--brown);
+      color: var(--ink);
     }
 
-    .quran-translation {
-      font-family: "Cormorant Garamond", serif;
+    .quran-english {
+      margin-top: 24px;
+
       font-size: 20px;
+
+      line-height: 1.75;
 
       font-style: italic;
 
-      line-height: 1.7;
-
-      color: var(--muted);
-
-      margin: 25px auto 0;
-      max-width: 580px;
+      color: var(--soft-ink);
     }
 
     .quran-reference {
-      margin-top: 18px;
+      margin-top: 16px;
 
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
+      font-family: "Montserrat", sans-serif;
 
-      color: var(--gold-dark);
-    }
-
-    /* -------------------------
-       DATE
-    ------------------------- */
-
-    .date-section {
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }
-
-    .section-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-
-      color: var(--gold-dark);
-
-      margin-bottom: 26px;
-    }
-
-    .wedding-date {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(42px, 9vw, 70px);
-
-      font-weight: 400;
-    }
-
-    .time {
-      margin-top: 13px;
-      color: var(--muted);
-
-      letter-spacing: 0.1em;
-      font-size: 13px;
-    }
-
-    /* -------------------------
-       COUNTDOWN
-    ------------------------- */
-
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-
-      width: min(520px, 100%);
-
-      margin: 50px auto 0;
-
-      gap: 10px;
-    }
-
-    .countdown-item {
-      border-top: 1px solid var(--gold-light);
-      border-bottom: 1px solid var(--gold-light);
-
-      padding: 20px 5px;
-    }
-
-    .countdown-number {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 37px;
-
-      display: block;
-
-      color: var(--gold-dark);
-    }
-
-    .countdown-label {
       font-size: 9px;
 
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: .18em;
 
-      color: var(--muted);
+      text-transform: uppercase;
+
+      color: var(--soft-ink);
     }
 
-    /* -------------------------
-       VENUE
-    ------------------------- */
+    /* SAVE THE DATE */
 
-    .venue-section {
-      background: rgba(255,255,255,0.35);
+    .wedding-date {
+      font-family: "Allura", cursive;
+
+      font-size:
+        clamp(58px, 12vw, 85px);
+
+      font-weight: 400;
+
+      line-height: .95;
+
+      color: var(--ink);
+    }
+
+    .wedding-time {
+      margin-top: 16px;
+
+      font-size: 20px;
+
+      color: var(--soft-ink);
     }
 
     .venue-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 43px;
+      margin-top: 25px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 34px;
 
       font-weight: 400;
+
+      color: var(--ink);
     }
 
     .venue-address {
-      margin-top: 15px;
+      margin-top: 12px;
 
-      color: var(--muted);
+      font-size: 18px;
 
-      font-size: 13px;
       line-height: 1.8;
+
+      color: var(--soft-ink);
     }
 
-    .outline-button {
+    .location-link {
       display: inline-block;
 
-      margin-top: 28px;
+      margin-top: 25px;
 
-      padding: 13px 27px;
-
-      border: 1px solid var(--gold);
-
-      border-radius: 100px;
-
-      color: var(--gold-dark);
-
-      background: transparent;
+      padding-bottom: 4px;
 
       text-decoration: none;
 
-      font-size: 10px;
+      border-bottom:
+        1px solid var(--accent-dark);
 
-      letter-spacing: 0.14em;
+      font-size: 18px;
 
-      text-transform: uppercase;
-
-      transition: 0.25s ease;
+      color: var(--ink);
     }
 
-    .outline-button:hover {
-      background: var(--gold);
-      color: white;
-    }
-
-    /* -------------------------
-       RSVP
-    ------------------------- */
+    /* RSVP */
 
     .rsvp-section {
-      padding-top: 100px;
-      padding-bottom: 110px;
+      padding-top: 110px;
+      padding-bottom: 115px;
     }
 
     .rsvp-card {
       width: min(600px, 100%);
+
       margin: auto;
 
-      background:
-        rgba(255, 253, 249, 0.75);
+      padding:
+        52px 30px;
 
       border:
-        1px solid rgba(185, 154, 99, 0.22);
+        1px solid rgba(185,168,144,.20);
 
-      padding:
-        50px 28px;
-
-      border-radius: 24px;
+      background:
+        rgba(255,255,255,.68);
 
       box-shadow:
-        0 25px 70px rgba(90,70,45,0.07);
+        0 20px 55px rgba(80,65,48,.045);
     }
 
     .rsvp-title {
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Allura", cursive;
 
-      font-size: 52px;
+      font-size: 68px;
 
       font-weight: 400;
+
+      color: var(--ink);
     }
 
-    .rsvp-description {
-      color: var(--muted);
-
-      line-height: 1.8;
-
-      margin:
-        12px auto 35px;
-
+    .rsvp-subtitle {
       max-width: 430px;
 
-      font-size: 13px;
+      margin:
+        3px auto 35px;
+
+      font-size: 17px;
+
+      line-height: 1.7;
+
+      color: var(--soft-ink);
     }
 
     .form-group {
+      margin-bottom: 20px;
+
       text-align: left;
-      margin-bottom: 19px;
     }
 
     label {
       display: block;
 
-      font-size: 10px;
-      letter-spacing: 0.13em;
+      margin-bottom: 8px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 9px;
+
+      letter-spacing: .16em;
+
       text-transform: uppercase;
 
-      color: var(--gold-dark);
-
-      margin-bottom: 8px;
+      color: var(--soft-ink);
     }
 
     input,
@@ -653,73 +782,81 @@
     textarea {
       width: 100%;
 
-      border: none;
-      border-bottom:
-        1px solid var(--beige-dark);
-
-      background: transparent;
-
       padding:
         12px 4px;
 
-      color: var(--brown);
+      border: none;
+
+      border-bottom:
+        1px solid rgba(185,168,144,.48);
+
+      background: transparent;
 
       outline: none;
 
-      font-family: "Montserrat", sans-serif;
+      font-family:
+        "Cormorant Garamond",
+        serif;
 
-      font-size: 14px;
-    }
+      font-size: 18px;
 
-    textarea {
-      resize: vertical;
-      min-height: 90px;
+      color: var(--ink);
     }
 
     input:focus,
     select:focus,
     textarea:focus {
-      border-bottom-color: var(--gold);
+      border-bottom-color:
+        var(--accent-dark);
+    }
+
+    textarea {
+      min-height: 85px;
+
+      resize: vertical;
     }
 
     .submit-button {
-      margin-top: 15px;
-
       width: 100%;
+
+      margin-top: 22px;
+
+      padding:
+        15px 20px;
 
       border: none;
 
-      padding: 16px;
-
-      border-radius: 100px;
+      border-radius: 3px;
 
       background:
         linear-gradient(
           135deg,
-          #bea16d,
-          #9e7e49
+          #d7cbbb,
+          #bca990
         );
 
-      color: white;
+      color: #ffffff;
 
-      text-transform: uppercase;
+      font-family: "Allura", cursive;
 
-      letter-spacing: 0.16em;
-
-      font-size: 10px;
+      font-size: 32px;
 
       cursor: pointer;
 
+      box-shadow:
+        0 10px 25px rgba(100,85,65,.10);
+
       transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        transform .25s ease,
+        box-shadow .25s ease;
     }
 
     .submit-button:hover {
-      transform: translateY(-2px);
+      transform:
+        translateY(-2px);
 
       box-shadow:
-        0 13px 30px rgba(150,120,70,0.18);
+        0 14px 30px rgba(100,85,65,.14);
     }
 
     .success-message {
@@ -727,115 +864,97 @@
 
       margin-top: 25px;
 
-      padding: 18px;
+      font-size: 22px;
 
-      border:
-        1px solid rgba(185,154,99,0.25);
+      line-height: 1.6;
 
-      border-radius: 14px;
-
-      color: var(--gold-dark);
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 20px;
+      color: var(--ink);
     }
 
-    /* -------------------------
-       CLOSING
-    ------------------------- */
+    /* CLOSING */
 
-    .closing {
-      padding-bottom: 90px;
+    .closing-section {
+      padding-bottom: 100px;
     }
 
-    .closing-arabic {
+    .dua-arabic {
       font-family: "Amiri", serif;
 
       direction: rtl;
 
-      font-size: 25px;
+      font-size: 27px;
 
-      color: var(--gold-dark);
+      line-height: 2;
+
+      color: var(--ink);
     }
 
-    .closing-text {
-      margin-top: 14px;
+    .closing-script {
+      margin-top: 25px;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Allura", cursive;
 
-      font-size: 21px;
+      font-size: 48px;
 
-      font-style: italic;
-
-      color: var(--muted);
+      color: var(--accent-dark);
     }
 
     .footer-brand {
-      margin-top: 60px;
+      margin-top: 50px;
+
+      font-family: "Montserrat", sans-serif;
+
+      font-size: 8px;
+
+      letter-spacing: .22em;
 
       text-transform: uppercase;
 
-      letter-spacing: 0.21em;
-
-      font-size: 9px;
-
-      color: var(--gold-dark);
+      color: var(--soft-ink);
     }
 
-    /* -------------------------
-       REVEAL ANIMATION
-    ------------------------- */
+    /* MOBILE */
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(25px);
+    @media (max-width: 520px) {
 
-      transition:
-        opacity 0.9s ease,
-        transform 0.9s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 600px) {
-
-      section {
-        padding-left: 18px;
-        padding-right: 18px;
+      .section {
+        padding:
+          75px 18px;
       }
 
-      .envelope {
-        height: 225px;
+      .envelope-left {
+        border-left-width:
+          175px;
+      }
+
+      .envelope-right {
+        border-right-width:
+          175px;
+      }
+
+      .envelope-bottom {
+        border-left-width:
+          175px;
+
+        border-right-width:
+          175px;
       }
 
       .envelope-flap {
-        height: 130px;
+        border-left-width:
+          175px;
+
+        border-right-width:
+          175px;
       }
 
       .wax-seal {
         top: 97px;
-
-        width: 55px;
-        height: 55px;
-
-        font-size: 19px;
-      }
-
-      .countdown {
-        gap: 4px;
-      }
-
-      .countdown-number {
-        font-size: 29px;
       }
 
       .rsvp-card {
         padding:
-          42px 20px;
+          44px 20px;
       }
 
     }
@@ -844,92 +963,133 @@
 
 <body>
 
-  <div class="grain"></div>
+  <div class="paper-fibres"></div>
 
-  <!-- =========================
-       OPENING ENVELOPE
-  ========================== -->
 
-  <div id="opening-screen">
+  <!-- OPENING SCREEN -->
+
+  <section id="opening-screen">
 
     <div class="opening-content">
 
       <div class="brand">
-        Islamic Bloom Invitations
+        Islamic Bloom
       </div>
 
-      <div class="envelope" id="envelope">
 
-        <div class="envelope-flap"></div>
+      <div class="envelope-wrap">
 
-        <div class="wax-seal">
-          A & Y
+        <div
+          class="envelope"
+          id="envelope"
+        >
+
+          <div class="envelope-left"></div>
+
+          <div class="envelope-right"></div>
+
+          <div class="envelope-bottom"></div>
+
+          <div class="envelope-flap"></div>
+
+
+          <div class="wax-seal">
+            A&Y
+          </div>
+
         </div>
 
       </div>
 
-      <h1 class="opening-title">
-        A Wedding Invitation
+
+      <h1 class="opening-names">
+
+        Amina
+
+        <span class="ampersand">
+          &
+        </span>
+
+        Yusuf
+
       </h1>
 
-      <p class="opening-subtitle">
-        Amina & Yusuf
-      </p>
+
+      <div class="opening-date">
+        17 October 2026
+      </div>
+
+
+      <div class="tap-text">
+        Tap below to open
+      </div>
+
 
       <button
-        class="open-button"
         id="openInvitation"
+        class="open-button"
+        type="button"
       >
         Open Invitation
       </button>
 
     </div>
 
-  </div>
+  </section>
 
 
-  <!-- =========================
-       INVITATION
-  ========================== -->
+
+  <!-- INVITATION -->
 
   <main id="invitation">
 
+
     <!-- HERO -->
 
-    <section class="hero">
+    <section class="section hero-section">
 
-      <div class="hero-inner reveal">
+      <div class="content">
 
-        <div class="bismillah-arabic">
+
+        <div class="bismillah">
+
           بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+
         </div>
 
-        <div class="bismillah-english">
+
+        <div class="bismillah-translit">
+
           Bismillāhir-Raḥmānir-Raḥīm
+
         </div>
 
-        <div class="gold-line"></div>
 
-        <p class="intro-small">
+        <div class="small-heading">
+
           Together with their families
-        </p>
 
-        <h1 class="couple-names">
+        </div>
+
+
+        <h2 class="hero-names">
 
           Amina
 
-          <span class="and">
+          <span>
             &
           </span>
 
           Yusuf
 
-        </h1>
+        </h2>
 
-        <p class="invitation-text">
 
-          With gratitude to Allah and hearts full
-          of joy, we warmly invite you to share
+        <p class="intro">
+
+          With gratitude to Allah
+          and hearts full of joy,
+          we warmly invite you to share
           in the celebration of our marriage.
 
         </p>
@@ -939,15 +1099,13 @@
     </section>
 
 
+
     <!-- QURAN -->
 
-    <section class="quran-section">
+    <section class="section quran-section">
 
-      <div class="quran-container reveal">
+      <div class="content">
 
-        <div class="quran-symbol">
-          ✦
-        </div>
 
         <div class="quran-arabic">
 
@@ -956,12 +1114,17 @@
 
         </div>
 
-        <p class="quran-translation">
 
-          “And of all things We created two mates;
-          perhaps you will remember.”
+        <div class="divider"></div>
+
+
+        <p class="quran-english">
+
+          “And of all things We created
+          two mates; perhaps you will remember.”
 
         </p>
+
 
         <div class="quran-reference">
 
@@ -974,138 +1137,69 @@
     </section>
 
 
-    <!-- DATE -->
 
-    <section class="date-section">
+    <!-- SAVE THE DATE -->
 
-      <div class="reveal">
+    <section class="section">
 
-        <div class="section-label">
-          Save The Date
+      <div class="content">
+
+
+        <div class="small-heading">
+
+          Save the Date
+
         </div>
+
 
         <h2 class="wedding-date">
 
-          Saturday
+          Saturday,
           <br>
-          17 October 2026
+          17 October
 
         </h2>
 
-        <div class="time">
+
+        <div class="wedding-time">
+
           5:30 PM
-        </div>
-
-
-        <!-- COUNTDOWN -->
-
-        <div class="countdown">
-
-          <div class="countdown-item">
-
-            <span
-              class="countdown-number"
-              id="days"
-            >
-              --
-            </span>
-
-            <span class="countdown-label">
-              Days
-            </span>
-
-          </div>
-
-
-          <div class="countdown-item">
-
-            <span
-              class="countdown-number"
-              id="hours"
-            >
-              --
-            </span>
-
-            <span class="countdown-label">
-              Hours
-            </span>
-
-          </div>
-
-
-          <div class="countdown-item">
-
-            <span
-              class="countdown-number"
-              id="minutes"
-            >
-              --
-            </span>
-
-            <span class="countdown-label">
-              Minutes
-            </span>
-
-          </div>
-
-
-          <div class="countdown-item">
-
-            <span
-              class="countdown-number"
-              id="seconds"
-            >
-              --
-            </span>
-
-            <span class="countdown-label">
-              Seconds
-            </span>
-
-          </div>
 
         </div>
 
-      </div>
 
-    </section>
+        <div class="divider"></div>
 
 
-    <!-- VENUE -->
+        <h3 class="venue-name">
 
-    <section class="venue-section">
+          The Ivory Pavilion
 
-      <div class="reveal">
+        </h3>
 
-        <div class="section-label">
-          The Celebration
-        </div>
-
-        <h2 class="venue-name">
-
-          The Grand Pavilion
-
-        </h2>
 
         <p class="venue-address">
 
-          Sydney, New South Wales
+          125 Gardenia Avenue
           <br>
-          Arrival from 5:30 PM
-          <br>
+
+          Sydney, NSW 2000
+
+          <br><br>
+
           Nikkah followed by reception
 
         </p>
 
 
-        <!-- CHANGE THIS GOOGLE MAP LINK -->
-
         <a
-          class="outline-button"
+          class="location-link"
           href="https://maps.google.com"
           target="_blank"
         >
+
           View Location
+
         </a>
 
       </div>
@@ -1113,42 +1207,39 @@
     </section>
 
 
+
     <!-- RSVP -->
 
-    <section class="rsvp-section">
+    <section class="section rsvp-section">
 
-      <div class="rsvp-card reveal">
+      <div class="rsvp-card">
 
-        <div class="section-label">
+
+        <div class="small-heading">
+
           Kindly Respond
+
         </div>
 
+
         <h2 class="rsvp-title">
+
           RSVP
+
         </h2>
 
-        <p class="rsvp-description">
+
+        <p class="rsvp-subtitle">
 
           We would be honoured to celebrate
-          this special day with you.
+          this beautiful day with you.
+
+          <br><br>
 
           Please respond by
           20 September 2026.
 
         </p>
-
-
-        <!--
-        IMPORTANT:
-
-        For REAL RSVP collection,
-        replace YOUR_FORM_ID below with
-        your Formspree form ID.
-
-        Example:
-
-        https://formspree.io/f/abcdwxyz
-        -->
 
 
         <form
@@ -1157,28 +1248,36 @@
           method="POST"
         >
 
+
           <div class="form-group">
 
             <label for="guestName">
+
               Full Name
+
             </label>
+
 
             <input
               id="guestName"
               name="Guest Name"
               type="text"
-              placeholder="Enter your full name"
+              placeholder="Your full name"
               required
             >
 
           </div>
 
 
+
           <div class="form-group">
 
             <label for="attendance">
+
               Will you be attending?
+
             </label>
+
 
             <select
               id="attendance"
@@ -1187,55 +1286,67 @@
             >
 
               <option value="">
-                Please select
+
+                Select your response
+
               </option>
+
 
               <option value="Joyfully accepts">
+
                 Joyfully accepts
+
               </option>
 
+
               <option value="Regretfully declines">
+
                 Regretfully declines
+
               </option>
 
             </select>
 
           </div>
+
 
 
           <div class="form-group">
 
             <label for="guestCount">
-              Number Attending
+
+              Number of Guests
+
             </label>
+
 
             <select
               id="guestCount"
-              name="Number Attending"
+              name="Number of Guests"
             >
 
               <option value="1">
-                1 Guest
+                1
               </option>
 
               <option value="2">
-                2 Guests
+                2
               </option>
 
               <option value="3">
-                3 Guests
+                3
               </option>
 
               <option value="4">
-                4 Guests
+                4
               </option>
 
               <option value="5">
-                5 Guests
+                5
               </option>
 
               <option value="6">
-                6 Guests
+                6
               </option>
 
             </select>
@@ -1243,39 +1354,48 @@
           </div>
 
 
+
           <div class="form-group">
 
-            <label for="additionalNames">
+            <label for="guestNames">
+
               Additional Guest Names
+
             </label>
 
+
             <textarea
-              id="additionalNames"
+              id="guestNames"
               name="Additional Guest Names"
-              placeholder="Please list the names of guests attending with you"
+              placeholder="Please list the names of any additional guests"
             ></textarea>
 
           </div>
 
 
+
           <div class="form-group">
 
             <label for="message">
-              Message for the Couple
+
+              Message or Du'a
+
             </label>
+
 
             <textarea
               id="message"
-              name="Message"
+              name="Message or Dua"
               placeholder="Leave a message or du'a for the couple"
             ></textarea>
 
           </div>
 
 
+
           <button
-            class="submit-button"
             type="submit"
+            class="submit-button"
           >
 
             Send RSVP
@@ -1285,13 +1405,15 @@
         </form>
 
 
+
         <div
           class="success-message"
           id="successMessage"
         >
 
-          Thank you ♡
+          Thank you.
           <br>
+
           Your RSVP has been received.
 
         </div>
@@ -1301,13 +1423,15 @@
     </section>
 
 
+
     <!-- CLOSING -->
 
-    <section class="closing">
+    <section class="section closing-section">
 
-      <div class="reveal">
+      <div class="content">
 
-        <div class="closing-arabic">
+
+        <div class="dua-arabic">
 
           بَارَكَ اللَّهُ لَكُمَا
           وَبَارَكَ عَلَيْكُمَا
@@ -1315,15 +1439,25 @@
 
         </div>
 
-        <p class="closing-text">
+
+        <div class="divider"></div>
+
+
+        <p class="intro">
 
           May Allah bless your union,
-          shower His blessings upon you
+          shower His blessings upon you,
           and unite you both in goodness.
 
         </p>
 
-        <div class="gold-line"></div>
+
+        <div class="closing-script">
+
+          With love
+
+        </div>
+
 
         <div class="footer-brand">
 
@@ -1338,11 +1472,10 @@
   </main>
 
 
+
   <script>
 
-    /* -------------------------
-       OPEN ENVELOPE
-    ------------------------- */
+    /* OPEN INVITATION */
 
     const openButton =
       document.getElementById(
@@ -1373,16 +1506,15 @@
           "open"
         );
 
-        openButton.textContent =
-          "Opening...";
+        openButton.style.opacity =
+          ".4";
 
 
         setTimeout(
           function () {
 
-            openingScreen.classList.add(
-              "hide"
-            );
+            openingScreen.style.display =
+              "none";
 
             invitation.classList.add(
               "show"
@@ -1393,11 +1525,6 @@
               0
             );
 
-            setTimeout(
-              revealOnScroll,
-              200
-            );
-
           },
           900
         );
@@ -1406,165 +1533,17 @@
     );
 
 
-    /* -------------------------
-       COUNTDOWN
-    ------------------------- */
 
-    const weddingDate =
-      new Date(
-        "2026-10-17T17:30:00+11:00"
-      ).getTime();
-
-
-    function updateCountdown() {
-
-      const now =
-        new Date().getTime();
-
-      const distance =
-        weddingDate - now;
-
-
-      if (distance <= 0) {
-
-        document.getElementById(
-          "days"
-        ).textContent = "0";
-
-        document.getElementById(
-          "hours"
-        ).textContent = "0";
-
-        document.getElementById(
-          "minutes"
-        ).textContent = "0";
-
-        document.getElementById(
-          "seconds"
-        ).textContent = "0";
-
-        return;
-      }
-
-
-      const days =
-        Math.floor(
-          distance /
-          (1000 * 60 * 60 * 24)
-        );
-
-
-      const hours =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60 * 24)
-          ) /
-          (1000 * 60 * 60)
-        );
-
-
-      const minutes =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60)
-          ) /
-          (1000 * 60)
-        );
-
-
-      const seconds =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60)
-          ) /
-          1000
-        );
-
-
-      document.getElementById(
-        "days"
-      ).textContent = days;
-
-      document.getElementById(
-        "hours"
-      ).textContent = hours;
-
-      document.getElementById(
-        "minutes"
-      ).textContent = minutes;
-
-      document.getElementById(
-        "seconds"
-      ).textContent = seconds;
-
-    }
-
-
-    updateCountdown();
-
-    setInterval(
-      updateCountdown,
-      1000
-    );
-
-
-    /* -------------------------
-       SCROLL REVEALS
-    ------------------------- */
-
-    function revealOnScroll() {
-
-      const elements =
-        document.querySelectorAll(
-          ".reveal"
-        );
-
-
-      elements.forEach(
-        function (element) {
-
-          const top =
-            element
-            .getBoundingClientRect()
-            .top;
-
-          const windowHeight =
-            window.innerHeight;
-
-
-          if (
-            top <
-            windowHeight - 70
-          ) {
-
-            element.classList.add(
-              "visible"
-            );
-
-          }
-
-        }
-      );
-
-    }
-
-
-    window.addEventListener(
-      "scroll",
-      revealOnScroll
-    );
-
-
-    /* -------------------------
-       RSVP AJAX SUBMISSION
-    ------------------------- */
+    /* RSVP FORM */
 
     const rsvpForm =
       document.getElementById(
         "rsvpForm"
+      );
+
+    const successMessage =
+      document.getElementById(
+        "successMessage"
       );
 
 
@@ -1580,8 +1559,8 @@
 
 
         /*
-        If Formspree has not yet been
-        connected, show demo behaviour.
+          Until you connect Formspree,
+          the form works as a demo.
         */
 
         if (
@@ -1591,7 +1570,7 @@
         ) {
 
           alert(
-            "Demo RSVP form. Connect your Formspree form ID to receive real guest responses."
+            "This is currently a demo RSVP. Connect your Formspree form ID to receive real responses."
           );
 
           return;
@@ -1611,14 +1590,18 @@
             await fetch(
               endpoint,
               {
+
                 method: "POST",
 
                 body: formData,
 
                 headers: {
+
                   Accept:
                     "application/json"
+
                 }
+
               }
             );
 
@@ -1630,11 +1613,7 @@
             rsvpForm.style.display =
               "none";
 
-            document
-              .getElementById(
-                "successMessage"
-              )
-              .style.display =
+            successMessage.style.display =
               "block";
 
           }
@@ -1642,7 +1621,7 @@
           else {
 
             alert(
-              "There was a problem sending your RSVP. Please try again."
+              "There was a problem submitting your RSVP. Please try again."
             );
 
           }
@@ -1652,7 +1631,7 @@
         catch (error) {
 
           alert(
-            "Unable to submit the RSVP right now."
+            "Unable to send your RSVP right now. Please try again."
           );
 
         }
